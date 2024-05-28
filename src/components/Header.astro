@@ -1,6 +1,7 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
+import DropDownHeader from './DropDownHeader.astro';
 ---
 
 <header>
@@ -11,8 +12,8 @@ import { SITE_TITLE } from '../consts';
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Aktuelles</HeaderLink>
 			<HeaderLink href="/about">Ergebnisse</HeaderLink>
-			<HeaderLink href="/termine">Termine</HeaderLink>
 			<HeaderLink href="/bundesliga">Bundesliga</HeaderLink>
+			<!-- <DropDownHeader href="/verein"/>-->
 		</div>
 		<div class="social-links">
 			<a href="https://m.webtoo.ls/@astro" target="_blank">
