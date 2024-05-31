@@ -1,11 +1,16 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = HTMLAttributes<'a'>;
+
+const { href, class: className, ...props } = Astro.props;
 ---
 
 <!-- Noch net fertig erster versuch -->
 <div class="dropdown">
   <button class="dropbtn">
-    <HeaderLink>Verein</HeaderLink>
+    <a>Verein</a>
     <i class="fa-solid fa-caret-down"></i>
   </button>
   <div class="dropdown-content">
@@ -20,12 +25,10 @@ import HeaderLink from "./HeaderLink.astro";
     overflow: hidden;
   }
   .dropdown .dropbtn {
-    font-size: 16px;
     border: none;
     outline: none;
     color: black;
     padding: 14px 16px;
-    background-color: inherit;
     font-family: inherit; /* Important for vertical align on mobile phones */
     margin: 0; /* Important for vertical align on mobile phones */
   }
@@ -52,6 +55,10 @@ import HeaderLink from "./HeaderLink.astro";
   .dropdown-content a:hover {
     background-color: #ddd;
   }
+
+  a:hover {
+	color: black;
+}
 
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {
