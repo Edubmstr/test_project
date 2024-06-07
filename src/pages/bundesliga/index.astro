@@ -1,8 +1,11 @@
 ---
-import BaseHead from "../../components/BaseHead.astro"
-import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts"
-import Header from '../../components/Header.astro';
+import { getCollection } from 'astro:content';
+import BaseHead from "../../components/BaseHead.astro";
 import Footer from "../../components/Footer.astro";
+import Header from '../../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+
+const steckbriefe = (await getCollection('steckbriefe'));
 ---
 
 <!DOCTYPE html>
@@ -14,7 +17,7 @@ import Footer from "../../components/Footer.astro";
         <Header/>
         <main>
             <h1>Bundesliga Team</h1>
-            <div class="bg-slate-300 rounded-md w-100 h-90 mb-4 content" >
+            <!--<div class="bg-slate-300 rounded-md w-100 h-90 mb-4 content" >
                 
                 <img class="rounded-md mr-4" src="/robin.jpg" alt="">
                 <div class="content-text">
@@ -53,11 +56,18 @@ import Footer from "../../components/Footer.astro";
                         <br>
                         Größten Erfolge:
                         <br>
-
                     </p>
-                        
                 </div>
-            </div>
+            </div>-->
+            <ul>
+                {
+                    steckbriefe.map((steckbrief)=>{
+                        <li class="bg-slate-300 rounded-md w-100 h-90 content">
+                                <h2>{steckbrief.data.title}</h2>
+                        </li>
+                    })
+                }
+            </ul>
         </main>
         <Footer/>
     </body>
@@ -72,5 +82,13 @@ import Footer from "../../components/Footer.astro";
     }
     .content{
         display: flex;
+    }
+
+    ul {
+        width: 100%;
+    }
+
+    ul li{
+        width: 100%;
     }
 </style>
