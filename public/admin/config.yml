@@ -50,5 +50,5 @@ collections:
         widget: list
         fields:
           - {label: Titel, name: title, widget: string}
-          - {label: Photo, name: photo, widget: image}
+          - {label: Photo, name: photo, widget: image, media_folder: "/public/images/{{path}}"}
       - { label: "Body", name: "body", widget: "markdown", required: false }

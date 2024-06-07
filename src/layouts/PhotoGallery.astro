@@ -8,6 +8,12 @@ import FormattedDate from '../components/FormattedDate.astro';
 type Props = CollectionEntry<'photo_gallery'>['data'];
 
 const { path, title, description, pubDate, updatedDate, photos } = Astro.props;
+
+
+function createMediaURL(url: string) {
+    return url.replace('src/assets', '');
+}
+
 ---
 
 <html lang="en">
@@ -49,7 +55,7 @@ const { path, title, description, pubDate, updatedDate, photos } = Astro.props;
                 {
                     photos.map((img) => (
                         <div class="flex flex-col p-1 mx-2" style="min-width: 600px; min-height: max-content;" >
-                            <img width={860} height={460} src={img.photo} alt="" />
+                            <img width={860} height={460} src={createMediaURL(img.photo)} alt="" />
                             <h4 class="title mt-2">{img.title}</h4>
                         </div>
                     ))
