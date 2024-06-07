@@ -4,8 +4,8 @@ backend:
   # optional, defaults to master
   branch: decap_cms_test
 
-media_folder: "src/assets/images" # Location where files will be stored in the repo
-public_folder: "src/assets/images" # The src attribute for uploaded media
+media_folder: "/images" # Location where files will be stored in the repo
+public_folder: "/images" # The src attribute for uploaded media
 
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
