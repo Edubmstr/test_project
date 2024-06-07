@@ -5,9 +5,9 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 
-type Props = CollectionEntry<'pages'>['data'];
+type Props = CollectionEntry<'photo_gallery'>['data'];
 
-const { path, title, description, pubDate, updatedDate } = Astro.props;
+const { path, title, description, pubDate, updatedDate, photos } = Astro.props;
 ---
 
 <html lang="en">
@@ -40,10 +40,24 @@ const { path, title, description, pubDate, updatedDate } = Astro.props;
 		</style>
 	</head>
 
-	<body>
+	<body >
 		<Header />
 		<main>
 			<h1 class="mb-6" >{title}</h1>
+
+            <div class="flex flex-row overflow-x-scroll pb-5" >
+                {
+                    photos.map((img) => (
+                        <div class="flex flex-col p-1 mx-2" style="min-width: 600px; min-height: max-content;" >
+                            <img width={860} height={460} src={img.photo} alt="" />
+                            <h4 class="title mt-2">{img.title}</h4>
+                        </div>
+                    ))
+                }
+			</div>
+
+            <div class="mb-8"></div>
+
 			<slot />
 		</main>
 		<Footer />
