@@ -13,8 +13,64 @@ import Footer from "../../components/Footer.astro";
     <body>
         <Header/>
         <main>
-            <h1>Test</h1>
+            <h1>Bundesliga Team</h1>
+            <div class="bg-slate-300 rounded-md w-100 h-90 mb-4 content" >
+                
+                <img class="rounded-md mr-4" src="/robin.jpg" alt="">
+                <div class="content-text">
+                    <h2>
+                        Robin Walter
+                    </h2>
+                    <p>
+                        Geburtsdatum: 09.07.1999
+                        <br>
+                        Hobbies: Programmieren, Sportschießen, Elektronik, Basteln
+                        <br>
+                        Beruf: Student (Informatik)
+                        <br>
+                        Wohnort: Reichenbach
+                        <br>
+                        Größten Erfolge:
+                        <br>
+                        
+                    </p>
+                </div>
+            </div>
+            <div class="bg-slate-300 rounded-md w-100 h-90 content">
+                <img class="rounded-md mr-4" src="/eduard.jpg" alt="">
+                <div class="content-text">
+                    <h2>
+                        Eduard Baumeister
+                    </h2>
+                    <p>
+                        Geburtsdatum: 12.06.2004
+                        <br>
+                        Hobbies: Programmieren, Sport, Fahrrad fahren, Golf
+                        <br>
+                        Beruf: Dualer Student Wirtschaftsinformatik
+                        <br>
+                        Wohnort: Plankstadt
+                        <br>
+                        Größten Erfolge:
+                        <br>
+
+                    </p>
+                        
+                </div>
+            </div>
         </main>
         <Footer/>
     </body>
 </html>
+
+<style>
+    h1{
+        text-align: center;
+    }
+    main{
+        width: 100%;
+    }
+    .content{
+        display: flex;
+    }
+</style>
